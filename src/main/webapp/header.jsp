@@ -18,6 +18,14 @@
       cssFile = "index.css";
       AdditionalCss = true;
     }
+    else if (currentPage.equals("/login.jsp")){
+      cssFile = "login.css";
+      AdditionalCss = true;
+    }
+    else if (currentPage.equals("/signup.jsp")) {
+      cssFile = "signup.css";
+      AdditionalCss = true;
+    }
   %>
   <% if(AdditionalCss){%>
     <link rel="stylesheet" href="<%= request.getContextPath() %>/styles/global.css">
