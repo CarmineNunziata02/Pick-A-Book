@@ -1,5 +1,8 @@
 package view.catalogo;
 
+import catalogoManagement.Prodotto;
+import catalogoManagement.ProdottoDAO;
+import catalogoManagement.ProdottoIDS;
 import com.google.gson.Gson;
 
 import javax.servlet.ServletException;
@@ -25,7 +28,23 @@ public class IndexServlet  extends HttpServlet {
             throws ServletException, IOException {
         Gson json = new Gson();
         DataSource ds = (DataSource)  getServletContext().getAttribute("DataSource");
+        ProdottoDAO prodottoDAO = new ProdottoIDS(ds);
 
+        String tipo = request.getParameter("tipo");
+        try {
+            PrintWriter out = response.getWriter();
+
+            if("lastSaved".equals(tipo)){
+                ArrayList<Prodotto> lastSaved =  (ArrayList<Prodotto>) prodottoDAO.lastSaved();
+                out.write(json.toJson(lastSaved));
+            } else if ("bestSellers".equals(tipo)) {
+                ArrayList<Prodotto> bestSellers = (ArrayList<Prodotto>) prodottoDAO.bestSellers();
+                out.write(json.toJson(bestSellers));
+            }
+
+        } catch (SQLException | IOException e) {
+            logger.log(Level.ALL, ERROR, e);
+        }
 
     }
 
