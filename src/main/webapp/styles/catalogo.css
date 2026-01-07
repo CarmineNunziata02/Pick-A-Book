@@ -1,0 +1,362 @@
+:root {
+    --background-primary: #0f0f0f;
+    --background-secondary: #1a1a1a;
+    --background-elevated: #2d2d2d;
+    --accent-primary: #8b5cf6;
+    --accent-secondary: #7c3aed;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --border-color: #374151;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+main {
+    display: flex;
+    min-height: 90vh;
+    background: var(--background-primary);
+}
+
+#catalogo{
+    width: 100%;
+    display: flex;
+    overflow-x: hidden;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    gap: 3rem;
+}
+
+#catalogo td{
+    padding: 0.5rem;
+}
+
+label{
+    margin: 1rem;
+    color: var(--text-secondary);
+}
+
+/* FILTRI */
+#filtri {
+    display: block;
+    margin: 2rem;
+    border-radius: 1.5rem;
+    flex: 1 1 40rem;
+    max-width: 25rem;
+    padding: 2rem;
+    background-color: var(--background-elevated);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+#filtri h4 {
+    color: var(--text-primary);
+    text-align: center;
+    font-weight: bold;
+}
+
+#filtri label {
+    color: var(--text-secondary);
+}
+
+/* STILE CHECKBOX PER FILTRI */
+#filtri input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1.8rem;
+    height: 1.8rem;
+    border: 2px solid var(--border-color);
+    border-radius: 0.4rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    background: var(--background-secondary);
+}
+
+#filtri input[type="checkbox"]:checked {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+}
+
+#filtri input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* SCHEDE PRODOTTO */
+#prodotti {
+    flex: 1 1 40rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.pagination-container{
+    display: flex;
+    min-width: 100%;
+    justify-content: center;
+    background: var(--background-elevated);
+    min-height: 5vh;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.pagination-container a{
+    background: var(--background-secondary);
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    color: var(--text-primary);
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    padding: 0;
+    margin: 0 1rem;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.pagination-container a:hover{
+    background: var(--accent-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+#search-input{
+    flex: 1 1 40rem;
+    text-align: end;
+}
+
+#schedeProdotto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    grid-gap: 3rem;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.scheda {
+    border-radius: 1.5rem;
+    background-color: var(--background-elevated);
+    text-align: center;
+    max-width: 24rem;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+.scheda:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-primary);
+}
+
+.scheda h4{
+    font-size: 1.8rem;
+    color: var(--text-primary);
+}
+.scheda img {
+    max-height: 18rem;
+    margin: 1rem;
+    transition: all 0.3s ease-in-out;
+    border-radius: 1rem;
+}
+
+.scheda:hover img {
+    transform: scale(1.05);
+}
+
+.info a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 1rem 2rem;
+    background: var(--accent-primary);
+    color: var(--text-primary);
+    border-radius: 3rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.info a:hover {
+    background: var(--accent-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+/*** SEARCH E MOSTRA FILTRI ***/
+
+.features{
+    min-height: 5vh;
+    padding: 2rem;
+    display: flex;
+    position: relative;
+    gap: 2rem;
+}
+
+#filtroBottone{
+    padding: 1rem 2rem;
+    margin: 1rem;
+    flex: 1 1 40rem;
+    font-size: 1.6rem;
+    text-align: center;
+    background: var(--accent-primary);
+    color: var(--text-primary);
+    border-radius: 1.2rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#filtroBottone:hover {
+    background: var(--accent-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+#no-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+#no-item img {
+    max-height: 12rem;
+    max-width: 12rem;
+    opacity: 0.7;
+    filter: brightness(0) invert(0.5);
+}
+
+#no-item p {
+    color: var(--accent-primary);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.search {
+    position: relative;
+    width: 7.6rem;
+    height: 7.6rem;
+    background-color: var(--background-elevated);
+    box-shadow: var(--shadow);
+    border-radius: 4rem;
+    padding: 1rem;
+    overflow: hidden;
+    transition: width 0.5s cubic-bezier(0.9, 0, 0.3, 0.9);
+    border: 1px solid var(--border-color);
+}
+.search__input {
+    border: none;
+    outline: none;
+    width: calc(100% - 6.4rem);
+    height: 100%;
+    border-radius: 4rem;
+    padding-left: 1.8rem;
+    font-family: "Inter", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.5s;
+    background-color: var(--background-elevated);
+    color: var(--text-primary);
+}
+
+.search__input:-webkit-autofill {
+    box-shadow: 0 0 0 100px var(--background-elevated) inset;
+}
+.search__button {
+    width: 5.6rem;
+    height: 5.6rem;
+    background-color: var(--accent-primary);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 1rem;
+    margin: auto;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: transform 0.6s cubic-bezier(0.9, 0, 0.3, 0.9);
+    border: none;
+}
+.search_icon, .search_close {
+    color: var(--text-primary);
+    font-size: 1.8rem;
+    position: absolute;
+    transition: opacity 0.5s cubic-bezier(0.9, 0, 0.3, 0.9);
+}
+.search__close {
+    opacity: 0;
+}
+
+/* Search animated */
+.show-search {
+    width: 100%;
+}
+.show-search .search__input {
+    opacity: 1;
+    pointer-events: initial;
+}
+.show-search .search__button {
+    transform: rotate(90deg);
+}
+.show-search .search__icon {
+    opacity: 0;
+}
+.show-search .search__close {
+    opacity: 1;
+}
+
+@media ( max-width : 768px) {
+    #catalogo{
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        gap: 2rem;
+    }
+
+    #prodotti {
+        padding-top: 1rem;
+    }
+    #schedeProdotto {
+        justify-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+        gap: 2rem;
+    }
+
+    .features {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #filtri {
+        max-width: 100%;
+        margin: 1rem;
+    }
+}
