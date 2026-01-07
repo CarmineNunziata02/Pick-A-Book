@@ -1,0 +1,265 @@
+#new_product {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: var(--background-primary);
+}
+
+#torna-indietro {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bar, #torna-indietro::after, #torna-indietro::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-primary);
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+#torna-indietro::before {
+    transform: rotate(-45deg) translate(-4px, 6px);
+    width: 60%;
+}
+
+#torna-indietro::after {
+    transform: rotate(45deg) translate(-4px, -6px);
+    width: 60%;
+}
+
+#torna-indietro:hover::before,
+#torna-indietro:hover::after {
+    background-color: var(--accent-primary);
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 70rem;
+    background: var(--background-elevated);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+    margin: 2rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+}
+
+.form-wrapper h2 {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--text-primary);
+    font-size: var(--text-3xl);
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.form-row, .file-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+    gap: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.form-row:last-of-type, .file-row:last-of-type {
+    border-bottom: none;
+}
+
+.form-row label, .file-row label {
+    flex: 1;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: var(--text-lg);
+    min-width: 15rem;
+}
+
+.form-row input, .form-row select, .form-row textarea {
+    flex: 2;
+    padding: 1.2rem 2rem;
+    background-color: var(--background-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    color: var(--text-primary);
+    font-size: var(--text-base);
+    transition: all 0.3s ease;
+    min-width: 0;
+}
+
+.form-row input:focus, .form-row select:focus, .form-row textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.form-row input::placeholder, .form-row textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.form-row select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23cbd5e1'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1.5rem center;
+    background-size: 1.5rem;
+    padding-right: 4rem;
+}
+
+.form-row textarea {
+    height: 12rem;
+    resize: vertical;
+    font-family: inherit;
+    line-height: 1.5;
+}
+
+.file-row input[type="file"] {
+    flex: 2;
+    padding: 1rem;
+    background-color: var(--background-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    color: var(--text-primary);
+    font-size: var(--text-base);
+}
+
+input[type="file"]::file-selector-button {
+    background-color: var(--accent-primary);
+    color: var(--text-primary);
+    border: 0;
+    border-radius: 0.8rem;
+    padding: 1rem 2rem;
+    margin-right: 2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: var(--text-base);
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: var(--accent-secondary);
+    transform: translateY(-1px);
+}
+
+.sub-class {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.form-wrapper button {
+    border: none;
+    font-size: var(--text-xl);
+    width: 100%;
+    max-width: 30rem;
+    padding: 1.5rem 3rem;
+    border-radius: 1.2rem;
+    background-color: var(--accent-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--text-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-wrapper button:hover {
+    background-color: var(--accent-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #new_product {
+        padding: 1rem;
+        min-height: 80vh;
+    }
+
+    .form-wrapper {
+        padding: 3rem 2rem;
+        margin: 1rem;
+        border-radius: 1.5rem;
+    }
+
+    .form-row, .file-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        padding: 1.5rem 0;
+    }
+
+    .form-row label, .file-row label {
+        min-width: auto;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-row input, .form-row select, .form-row textarea, .file-row input[type="file"] {
+        flex: none;
+        width: 100%;
+    }
+
+    #torna-indietro {
+        top: 1rem;
+        left: 1rem;
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-wrapper {
+        padding: 2rem 1.5rem;
+    }
+
+    .form-wrapper h2 {
+        font-size: var(--text-2xl);
+        padding: 1rem 0;
+    }
+
+    .form-wrapper button {
+        font-size: var(--text-lg);
+        padding: 1.2rem 2rem;
+    }
+
+    input[type="file"]::file-selector-button {
+        padding: 0.8rem 1.5rem;
+        margin-right: 1rem;
+    }
+}
+
+/* Animation for form elements */
+.form-row input:focus, .form-row select:focus, .form-row textarea:focus {
+    transform: translateY(-1px);
+}
+
+/* Loading state for button */
+.form-wrapper button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.form-wrapper button:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
