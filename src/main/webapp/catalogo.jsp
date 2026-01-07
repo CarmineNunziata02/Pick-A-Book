@@ -14,6 +14,29 @@
 	"></script>
 
     <script src="./Script/dynamicCode.js"></script>
+	 <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var filtroBottone = document.getElementById('filtroBottone');
+            var filtri = document.getElementById('filtri');
+
+            filtroBottone.addEventListener('click', function() {
+                if (filtri.style.display === 'none') {
+                    filtri.style.display = 'block';
+                    filtroBottone.textContent = 'Nascondi filtri';
+                } else {
+                    filtri.style.display = 'none';
+                    filtroBottone.textContent = 'Mostra filtri';
+                }
+            });
+        });
+ 	</script>
+	<script>
+        $(document).ready(function() {
+            dynamicCatalog("<%=request.getContextPath()%>/CatalogoServlet");
+            dynamicCategorie("<%=request.getContextPath()%>/CategoriaServlet");
+            dynamicGeneri("<%=request.getContextPath()%>/GenereServlet");
+        });
+    </script>
     <main>
         <section id="catalogo">
             <div id="filtri">
