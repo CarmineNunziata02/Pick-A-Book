@@ -102,6 +102,9 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css
     });
   }
 </script>
+<button id="torna-indietro" onclick="window.location.assign('areapersonale.jsp')">
+  <div class="bar"></div>
+</button>
 <section id="new_product">
   <div class="form-wrapper">
     <form enctype ="multipart/form-data" onsubmit="confermaAggiunta(event)" method="POST">
@@ -134,7 +137,6 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css
         <label for="quantita">Quantità: </label>
         <input  id="quantita" type="number" name="quantita">
       </div>
-      <div class="form-row">
         <label for="genere">Genere: </label>
         <select  id="genere" name="genere">
           <option disabled selected value>-scegliere genere-</option>
