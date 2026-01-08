@@ -17,13 +17,23 @@
     if (currentPage.equals("/index.jsp")) {
       cssFile = "index.css";
       AdditionalCss = true;
-    }
-    else if (currentPage.equals("/login.jsp")){
+    } else if (currentPage.equals("/login.jsp")){
       cssFile = "login.css";
       AdditionalCss = true;
-    }
-    else if (currentPage.equals("/signup.jsp")) {
+    } else if (currentPage.equals("/signup.jsp")) {
       cssFile = "signup.css";
+      AdditionalCss = true;
+    } else if (currentPage.equals(("/catalogo.jsp"))) {
+      cssFile = "catalogo.css";
+      AdditionalCss = true;
+    } else if (currentPage.equals(("/prodotto.jsp"))) {
+      cssFile = "prodotto.css";
+      AdditionalCss = true;
+    } else if (currentPage.equals(("/aggiungiProdotto.jsp"))) {
+      cssFile = "aggiungiProdotto.css";
+      AdditionalCss = true;
+    } else if (currentPage.equals(("/modificaProdotto.jsp"))) {
+      cssFile = "modificaProdotto.css";
       AdditionalCss = true;
     }
   %>
