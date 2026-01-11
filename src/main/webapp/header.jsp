@@ -35,6 +35,15 @@
     } else if (currentPage.equals(("/modificaProdotto.jsp"))) {
       cssFile = "modificaProdotto.css";
       AdditionalCss = true;
+    } else if (currentPage.equals(("/carrello.jsp"))) {
+      cssFile = "carrello.css";
+      AdditionalCss = true;
+    } else if (currentPage.equals(("/ordine.jsp"))) {
+      cssFile = "ordine.css";
+      AdditionalCss = true;
+    } else if (currentPage.equals(("/richiestaPassword.jsp"))) {
+      cssFile = "richiestaPassword.css";
+      AdditionalCss = true;
     }
   %>
   <% if(AdditionalCss){%>
