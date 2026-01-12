@@ -1,0 +1,200 @@
+#personal-info {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-primary);
+    padding: 2rem;
+}
+
+.form-wrapper {
+    background: var(--background-elevated);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 3rem;
+    width: 100%;
+    max-width: 60rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.form-wrapper:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.form-wrapper h2 {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--text-primary);
+    font-size: var(--text-3xl);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+    width: 100%;
+    gap: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.form-row:last-of-type {
+    border-bottom: none;
+}
+
+.form-wrapper label {
+    flex: 1;
+    margin: 0;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: var(--text-lg);
+    min-width: 15rem;
+}
+
+.form-wrapper input {
+    flex: 2;
+    padding: 1.2rem 1.8rem;
+    background-color: var(--background-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    font-size: var(--text-base);
+    transition: all 0.3s ease;
+    min-width: 0;
+}
+
+.form-wrapper input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+    transform: translateY(-1px);
+}
+
+.form-wrapper input::placeholder {
+    color: var(--text-muted);
+}
+
+.sub-class {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.form-wrapper button {
+    border: none;
+    font-size: var(--text-xl);
+    width: 100%;
+    max-width: 25rem;
+    padding: 1.4rem 2rem;
+    border-radius: 1.2rem;
+    background-color: var(--accent-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--text-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-wrapper button:hover {
+    background-color: var(--accent-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.form-wrapper button:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #personal-info {
+        padding: 1rem;
+    }
+
+    .form-wrapper {
+        padding: 3rem 2rem;
+        margin: 1rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        padding: 1.5rem 0;
+    }
+
+    .form-wrapper label {
+        min-width: auto;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-wrapper input {
+        flex: none;
+        width: 100%;
+    }
+
+    .form-wrapper h2 {
+        font-size: var(--text-2xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .form-wrapper {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .form-wrapper h2 {
+        font-size: var(--text-xl);
+        padding: 1rem 0;
+    }
+
+    .form-wrapper button {
+        font-size: var(--text-lg);
+        padding: 1.2rem 1.8rem;
+        max-width: 100%;
+    }
+
+    .form-wrapper input {
+        padding: 1rem 1.5rem;
+    }
+}
+
+/* Focus accessibility */
+.form-wrapper input:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
+/* Loading state */
+.form-wrapper button.loading {
+    position: relative;
+    color: transparent;
+}
+
+.form-wrapper button.loading::after {
+    content: '';
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid transparent;
+    border-top: 2px solid var(--text-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
