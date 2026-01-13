@@ -1,0 +1,226 @@
+section {
+    min-height: 68.6vh;
+    padding: 3rem 2rem;
+    overflow-x: auto;
+    margin-bottom: 4rem;
+    background: var(--background-primary);
+}
+
+h2 {
+    padding-bottom: 2rem;
+    color: var(--text-primary);
+    font-size: var(--text-3xl);
+    font-weight: 600;
+    text-align: center;
+}
+
+h4, p {
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    white-space: nowrap;
+    background-color: var(--background-elevated);
+    border-radius: 1.2rem;
+    color: var(--text-primary);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+thead {
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 700;
+    background-color: var(--accent-primary);
+}
+
+thead th {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    padding: 1.5rem 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+td, th {
+    padding: 1.2rem 0.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    font-size: var(--text-base);
+}
+
+tbody tr {
+    transition: all 0.3s ease;
+}
+
+tbody tr:hover {
+    background-color: var(--background-secondary);
+    transform: translateY(-1px);
+}
+
+/* SEZIONE FILTRI */
+#filtri {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--background-elevated);
+    border-radius: 1.2rem;
+    border: 1px solid var(--border-color);
+}
+
+.user-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+select {
+    flex: 1 1 20rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 1rem 1.5rem;
+    background-color: var(--background-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 0.8rem;
+    font-size: var(--text-base);
+    transition: all 0.3s ease;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23cbd5e1'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.2rem;
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.1);
+}
+
+button img {
+    width: 2.4rem;
+    height: 2.4rem;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+}
+
+button:hover img {
+    transform: scale(1.1);
+}
+
+#torna-indietro {
+    position: relative;
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bar, #torna-indietro::after, #torna-indietro::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-primary);
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+#torna-indietro::before {
+    transform: rotate(-45deg) translate(-4px, 6px);
+    width: 60%;
+}
+
+#torna-indietro::after {
+    transform: rotate(45deg) translate(-4px, -6px);
+    width: 60%;
+}
+
+#torna-indietro:hover::before,
+#torna-indietro:hover::after {
+    background-color: var(--accent-primary);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    section {
+        padding: 2rem 1rem;
+        margin-bottom: 3rem;
+    }
+
+    h2 {
+        font-size: var(--text-2xl);
+        padding-bottom: 1.5rem;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        border-radius: 1rem;
+    }
+
+    th, td {
+        min-width: 12rem;
+        max-width: 20rem;
+        word-wrap: break-word;
+        padding: 1rem 0.5rem;
+        font-size: var(--text-sm);
+    }
+
+    thead {
+        position: sticky;
+        top: 0;
+        background-color: var(--accent-primary);
+    }
+
+    #filtri {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .user-search {
+        gap: 1rem;
+    }
+
+    select {
+        flex: 1 1 100%;
+    }
+
+    #torna-indietro {
+        width: 3.5rem;
+        height: 3.5rem;
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 1.5rem 0.5rem;
+    }
+
+    th, td {
+        min-width: 10rem;
+        max-width: 15rem;
+        padding: 0.8rem 0.3rem;
+        font-size: var(--text-xs);
+    }
+
+    #filtri {
+        padding: 1rem;
+    }
+}
