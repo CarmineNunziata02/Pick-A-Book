@@ -16,15 +16,13 @@ public class MainContext implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent sce) {
 		ServletContext context = sce.getServletContext();
 
+
 		DataSource ds = null;
 		try {
 			Context initCtx = new InitialContext();
 			Context envCtx = (Context) initCtx.lookup("java:comp/env");
 
 			ds = (DataSource) envCtx.lookup("jdbc/Pickabook");
-
-
-
 		} catch (NamingException e) {
 			System.out.println("Error:" + e.getMessage());
 		}		

@@ -40,7 +40,7 @@ public class CatalogoServlet extends HttpServlet{
 			// Ordine alfabetico dei prodotti
 			Collections.sort(catalogo, new ProdottoComparator());
 			out.write(json.toJson(catalogo));
-			
+			out.flush();
 		} catch (IOException | SQLException e) {
 			logger.log(Level.ALL, ERROR, e);
 		}
