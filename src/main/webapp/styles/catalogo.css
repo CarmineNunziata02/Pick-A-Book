@@ -1,3 +1,4 @@
+/* Catalogo - Modern Dark Theme */
 :root {
     --background-primary: #0f0f0f;
     --background-secondary: #1a1a1a;
@@ -305,7 +306,7 @@ label{
     transition: transform 0.6s cubic-bezier(0.9, 0, 0.3, 0.9);
     border: none;
 }
-.search_icon, .search_close {
+/*.search_icon, .search_close {
     color: var(--text-primary);
     font-size: 1.8rem;
     position: absolute;
@@ -314,7 +315,23 @@ label{
 .search__close {
     opacity: 0;
 }
+*/
+.search__icon, .search__close {
+    color: var(--text-primary);
+    position: absolute;
+    transition: opacity 0.5s cubic-bezier(0.9, 0, 0.3, 0.9);
+}
 
+/* Aggiungi questo per ingrandire solo la lente */
+.search__icon {
+    font-size: 2.5rem; /* Aumenta questo valore finché non ottieni la grandezza desiderata */
+}
+
+/* Opzionale: se vuoi che anche la X sia grande uguale */
+.search__close {
+    font-size: 2.5rem;
+    opacity: 0;
+}
 /* Search animated */
 .show-search {
     width: 100%;
