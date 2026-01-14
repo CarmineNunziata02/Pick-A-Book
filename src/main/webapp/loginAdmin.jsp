@@ -41,6 +41,9 @@
 </script>
 <main>
     <section id="login">
+        <div class="login-img">
+            <img src="./images/admin.png" alt="admin.png">
+        </div>
         <div class="form-wrapper">
             <h3>Accedi al tuo Account <br> Da Gestore</h3>
             <form onsubmit="confermaLogin(event)" method="post">

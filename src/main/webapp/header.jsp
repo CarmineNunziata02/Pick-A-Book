@@ -17,34 +17,53 @@
     if (currentPage.equals("/index.jsp")) {
       cssFile = "index.css";
       AdditionalCss = true;
-    } else if (currentPage.equals("/login.jsp")){
+    }else if (currentPage.equals("/login.jsp")){
       cssFile = "login.css";
-      AdditionalCss = true;
-    } else if (currentPage.equals("/signup.jsp")) {
-      cssFile = "signup.css";
       AdditionalCss = true;
     } else if (currentPage.equals(("/catalogo.jsp"))) {
       cssFile = "catalogo.css";
       AdditionalCss = true;
-    } else if (currentPage.equals(("/prodotto.jsp"))) {
-      cssFile = "prodotto.css";
+    }else if (currentPage.equals(("/signup.jsp"))) {
+      cssFile = "signup.css";
       AdditionalCss = true;
-    } else if (currentPage.equals(("/aggiungiProdotto.jsp"))) {
-      cssFile = "aggiungiProdotto.css";
+    }else if (currentPage.equals(("/areapersonale.jsp"))) {
+      cssFile = "areapersonale.css";
       AdditionalCss = true;
-    } else if (currentPage.equals(("/modificaProdotto.jsp"))) {
-      cssFile = "modificaProdotto.css";
+    }else if (currentPage.equals(("/loginAdmin.jsp"))) {
+      cssFile = "loginAdmin.css";
       AdditionalCss = true;
-    } else if (currentPage.equals(("/carrello.jsp"))) {
+    }else if (currentPage.equals(("/carrello.jsp"))) {
       cssFile = "carrello.css";
       AdditionalCss = true;
-    } else if (currentPage.equals(("/ordine.jsp"))) {
+    }else if (currentPage.equals(("/datipersonali.jsp"))) {
+      cssFile = "datipersonali.css";
+      AdditionalCss = true;
+    }else if (currentPage.equals(("/indirizzo.jsp"))) {
+      cssFile = "indirizzo.css";
+      AdditionalCss = true;
+    }else if (currentPage.equals(("/prodotto.jsp"))) {
+      cssFile = "prodotto.css";
+      AdditionalCss = true;
+    }else if (currentPage.equals(("/ordine.jsp"))) {
       cssFile = "ordine.css";
       AdditionalCss = true;
-    } else if (currentPage.equals(("/richiestaPassword.jsp"))) {
+    }else if (currentPage.equals(("/aggiungiProdotto.jsp"))) {
+      cssFile = "aggiungiProdotto.css";
+      AdditionalCss = true;
+    }else if (currentPage.equals(("/modificaProdotto.jsp"))) {
+      cssFile = "modificaProdotto.css";
+      AdditionalCss = true;
+    }else if (currentPage.equals(("/controllaOrdini.jsp"))) {
+      cssFile = "controllaOrdini.css";
+      AdditionalCss = true;
+    }else if (currentPage.equals(("/eliminaProdotto.jsp"))) {
+      cssFile = "eliminaProdotto.css";
+      AdditionalCss = true;
+    }else if (currentPage.equals(("/richiestaPassword.jsp"))) {
       cssFile = "richiestaPassword.css";
       AdditionalCss = true;
     }
+   
   %>
   <% if(AdditionalCss){%>
     <link rel="stylesheet" href="<%= request.getContextPath() %>/styles/global.css">
