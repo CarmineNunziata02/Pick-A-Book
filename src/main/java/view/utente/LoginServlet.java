@@ -27,12 +27,12 @@ import java.util.logging.Logger;
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     @Override
     protected void doPost(HttpServletRequest request , HttpServletResponse response)
             throws ServletException , IOException{
-    	DataSource ds = (DataSource)  getServletContext().getAttribute("DataSource");
+        DataSource ds = (DataSource)  getServletContext().getAttribute("DataSource");
         UserDAO userDAO = new UserIDS(ds);
         HashMap<String, String> responseMap = new HashMap<>();
         GestoreCatalogoDAO gestoreCatalogoDAO = new GestoreCatalogoIDS(ds);
@@ -96,8 +96,9 @@ public class LoginServlet extends HttpServlet {
                 if(gestoreCatalogo != null && gestoreOrdini !=null) {
                     session.setAttribute("user", gestoreCatalogo);
                     session.setAttribute("BOTH" , true);
-                    
+
                     responseMap.put(STATUS, "success");
+                    responseMap.put(URL, AREA_PERSONALE);
                     String jsonResponse = json.toJson(responseMap);
                     response.setContentType(contentType);
                     out.write(jsonResponse);
@@ -106,6 +107,7 @@ public class LoginServlet extends HttpServlet {
                     session.setAttribute("user", gestoreCatalogo);
 
                     responseMap.put(STATUS, "success");
+                    responseMap.put(URL, AREA_PERSONALE);
                     String jsonResponse = json.toJson(responseMap);
                     response.setContentType(contentType);
                     out.write(jsonResponse);
@@ -114,6 +116,7 @@ public class LoginServlet extends HttpServlet {
                     session.setAttribute("user", gestoreOrdini);
 
                     responseMap.put(STATUS, "success");
+                    responseMap.put(URL, AREA_PERSONALE);
                     String jsonResponse = json.toJson(responseMap);
                     response.setContentType(contentType);
                     out.write(jsonResponse);
@@ -129,7 +132,7 @@ public class LoginServlet extends HttpServlet {
                 }
             }
         } catch (SQLException | NullPointerException e) {
-        	logger.log(Level.ALL, ERROR, e);
+            logger.log(Level.ALL, ERROR, e);
         }
 
     }
@@ -139,12 +142,15 @@ public class LoginServlet extends HttpServlet {
 
     private static final String URL = "url";
     private static final String INDEX = "index.jsp";
+    private static final String AREA_PERSONALE = "areapersonale.jsp";
     private static final String LOGIN_ADMIN = "loginAdmin.jsp";
-    
+
     /*** LOGGER ***/
-	private static final Logger logger = Logger.getLogger(LoginServlet.class.getName());
+    private static final Logger logger = Logger.getLogger(LoginServlet.class.getName());
     private static final String ERROR = "Errore";
 
     private static final String contentType = "application/json";
 
 }
+
+
