@@ -11,7 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class GestoreCatalogoIDS implements GestoreCatalogoDAO{
-
+	
 	private DataSource ds = null;
 	private Connection connection = null;
 
@@ -31,8 +31,8 @@ public class GestoreCatalogoIDS implements GestoreCatalogoDAO{
 				+ " (email_address, nome, cognome, password) VALUES (?, ?, ?, ?)";
 
 		try (Connection connection = ds.getConnection();
-			 PreparedStatement preparedStatement = connection.prepareStatement(query);) {
-
+				PreparedStatement preparedStatement = connection.prepareStatement(query);) {
+			
 			String hashedPassword = PasswordUtils.hashPassword(gestoreCatalogo.getPassword());
 
 
@@ -56,8 +56,8 @@ public class GestoreCatalogoIDS implements GestoreCatalogoDAO{
 				+ "WHERE email = ?";
 
 		try (Connection connection = ds.getConnection();
-			 PreparedStatement preparedStatement = connection.prepareStatement(query);) {
-
+				PreparedStatement preparedStatement = connection.prepareStatement(query);) {
+			
 			String hashedPassword = PasswordUtils.hashPassword(gestoreCatalogo.getPassword());
 
 			preparedStatement.setString(1, gestoreCatalogo.getNome());
@@ -66,13 +66,13 @@ public class GestoreCatalogoIDS implements GestoreCatalogoDAO{
 			preparedStatement.setString(4, gestoreCatalogo.getEmail());
 
 			if(preparedStatement.executeUpdate()>0)
-				return true;
+			return true;
 		} catch (SQLException e) {
 			logger.log(Level.ALL, ERROR, e);
 		}
-
+		
 		return false;
-
+		
 	}
 
 	@Override
@@ -80,27 +80,27 @@ public class GestoreCatalogoIDS implements GestoreCatalogoDAO{
 		String query = "DELETE FROM " + GestoreCatalogoIDS.TABLE + " WHERE email_address = ?";
 
 		try (Connection connection = ds.getConnection();
-			 PreparedStatement preparedStatement = connection.prepareStatement(query);) {
+				PreparedStatement preparedStatement = connection.prepareStatement(query);) {
 
 			preparedStatement.setString(1, email);
 
 			if(preparedStatement.executeUpdate()>0)
-				return true;
+			return true;
 		} catch (SQLException e) {
 			logger.log(Level.ALL, ERROR, e);
 		}
 		return false;
-
+		
 	}
-
+	
 	@Override
 	public GestoreCatalogo doRetrieveByAuthentication(String email, String password) throws SQLException {
 		String query = "SELECT * FROM " + GestoreCatalogoIDS.TABLE + " WHERE email_address = ? and password = ?";
 
 		try (Connection connection = ds.getConnection();
-			 PreparedStatement preparedStatement = connection.prepareStatement(query);) {
+				PreparedStatement preparedStatement = connection.prepareStatement(query);) {
 			String hashedPassword = PasswordUtils.hashPassword(password);
-
+			
 			preparedStatement.setString(1, email);
 			preparedStatement.setString(2, hashedPassword);
 
@@ -113,14 +113,14 @@ public class GestoreCatalogoIDS implements GestoreCatalogoDAO{
 			}
 
 			rs.close();
-
+			
 		} catch (SQLException e) {
 			logger.log(Level.ALL, ERROR, e);
 		}
-
+		
 		return null;
 	}
-
+	
 	/*** MACRO ***/
 	private static final String TABLE = "gestore_catalogo";
 	private static final String NOME = "nome";
