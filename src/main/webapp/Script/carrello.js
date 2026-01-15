@@ -36,7 +36,7 @@ function totaleParziale() {
 
 	cassa = document.getElementById("cassa");
 	cassa.getElementsByClassName("tot")[0].innerHTML = "&#8364 " + tot.toFixed(2);
-	if (tot == 0)
+	if (tot == 0) // se non ci sono elementi nel carrello il totale è 0
 		spedizione = 0;
 	cassa.getElementsByClassName("totCumul")[0].innerHTML = "&#8364 " + (tot + spedizione).toFixed(2);
 }
@@ -53,9 +53,11 @@ function eliminaRiga(button) {
 		type: 'POST',
 		data: { isbn: idProdotto },
 		success: function(response) {
+			// Rimuovi la riga del prodotto dal carrello nell'interfaccia utente
 			row.parentNode.removeChild(row);
 
 			dynamicCart(contextPath + "/CarrelloServlet", "2");
+			// Aggiorna i totali
 			totaleParziale();
 		},
 		error: function(xhr, status, error) {
@@ -79,9 +81,10 @@ function checkCard() {
 	var expiryDate = expiryDateInput.value;
 	var expiryDateError = document.getElementById("expiry-date-error");
 
-	var cleanCardNumber = numberCard.replace(/[^0-9]/g, "");
+	// Controllo sul numero della carta
+	var cleanCardNumber = numberCard.replace(/[^0-9]/g, ""); // Rimuovi caratteri non numerici
 	numberCardInput.value = cleanCardNumber;
-	var formattedCardNumber = cleanCardNumber.replace(/(.{4})/g, "$1-");
+	var formattedCardNumber = cleanCardNumber.replace(/(.{4})/g, "$1-"); // Aggiungi "-" ogni 4 cifre
 
 	if (cleanCardNumber.length !== 16 || !/^\d+$/.test(cleanCardNumber)) {
 		document.getElementById("card-number").style.border = "2px solid red";
@@ -92,10 +95,12 @@ function checkCard() {
 		document.getElementById("card-number").style.border = "2px solid green";
 		cardNumberError.textContent = "";
 		validNumber = true;
+		// Rimuovi l'ultimo trattino nel numero della carta
 		document.getElementById("card-number").value = formattedCardNumber.slice(0, -1);
 	}
 
 
+	// Controllo sul CVV
 	if (cvvNumber.length !== 3 || !/^\d+$/.test(cvvNumber)) {
 		document.getElementById("cvv").style.border = "2px solid red";
 		cvvNumberError.textContent =
@@ -107,9 +112,11 @@ function checkCard() {
 		validCvv = true;
 	}
 
+	// Controllo sulla data
 	var currentDate = new Date();
-	var currentYear = currentDate.getFullYear() % 100;
+	var currentYear = currentDate.getFullYear() % 100; // Prendi solo gli ultimi due numeri dell'anno
 
+	// Rimuovi tutti i caratteri non numerici dalla data
 
 	var cleanExpiryDate = expiryDate.replace(/[^\d/]/g, "");
 
@@ -187,11 +194,14 @@ function toggleSummary() {
 	var darkGradient = document.getElementById('dark-gradient');
 	var closeIcon = document.getElementById('closeIcon');
 
+	// Verifica lo stato attuale di visibilità
 	var isVisible = darkGradient.style.visibility === 'visible';
 
+	// Inverti lo stato di visibilità
 	darkGradient.style.visibility = isVisible ? 'hidden' : 'visible';
 	summary.style.visibility = isVisible ? 'hidden' : 'visible';
 
+	// Aggiungi l'event listener all'icona
 	if (closeIcon) {
 		closeIcon.addEventListener('click', toggleSummary);
 	}
@@ -205,9 +215,11 @@ function svuotaCampo() {
 function onClickHandler() {
 	if ($("#dinamico tr").length === 0) {
 		Swal.fire('Errore!', 'Inserire almeno un prodotto nel carrello', 'error');
-		return;
+		return; // Esce dalla funzione se non ci sono righe nel carrello
 	}
 	svuotaCampo();
 	dynamicCheckout();
 	toggleSummary();
 }
+
+

@@ -14,7 +14,8 @@
 	"></script>
 
     <script src="./Script/dynamicCode.js"></script>
-	 <script>
+    <script src="./Script/carrello.js"></script>
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             var filtroBottone = document.getElementById('filtroBottone');
             var filtri = document.getElementById('filtri');
@@ -29,8 +30,9 @@
                 }
             });
         });
- 	</script>
-	<script>
+    </script>
+
+    <script>
         $(document).ready(function() {
             dynamicCatalog("<%=request.getContextPath()%>/CatalogoServlet");
             dynamicCategorie("<%=request.getContextPath()%>/CategoriaServlet");
@@ -69,6 +71,8 @@
         </section>
     </main>
     <jsp:include page="./footer.jsp" flush="true"></jsp:include>
+    <script src="./Script/search.js"></script>
     <script src="./Script/main.js"></script>
 </body>
 </html>
+

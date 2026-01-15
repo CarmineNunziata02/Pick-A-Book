@@ -4,3 +4,4 @@ function scrollSenzaOffset(event) {
     let target = document.querySelector(event.target.getAttribute('href'));
     target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
+

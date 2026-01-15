@@ -19,6 +19,7 @@
 		<h2>Controlla Ordini</h2>
 		<div id="filtri">
 			<h5>Filtri</h5>
+			<br>
 			<div class="user-search">
 				<label>Id: </label> <input type="text" id="searchInput"
 					placeholder="inserire l'id utente..." onkeyup="filterRows()">
@@ -26,7 +27,7 @@
 			<div>
 				<label>da </label> <input type="date" id="startDateInput"
 					onchange="filterRows()" /> <label>a </label> <input type="date"
-					id="endDateInput" onchange="filterRows()" /> <label>Stato
+					id="endDateInput" onchange="filterRows()" /> <br><label>Stato
 				</label> <select name="statoOrdine" id="statoOrdine" onchange="filterRows()">
 					<option>-scegliere stato-</option>
 					<option>In lavorazione</option>

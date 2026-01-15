@@ -43,6 +43,7 @@ public class CarrelloServlet extends HttpServlet {
 
 		Carrello carrello = (Carrello) session.getAttribute("carrello");
 		String isbn = request.getParameter("isbn");
+		System.out.println(isbn);
 		User user = (User) session.getAttribute("user");
 
 		String requestBody = request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));

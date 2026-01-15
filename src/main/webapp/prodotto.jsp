@@ -18,9 +18,10 @@
 		<% Prodotto p = (Prodotto) request.getAttribute("prodotto");%>
 
 		<script>
+			// Ottieni il genere e la categoria del prodotto
 			var genere = "<%= p.getGenere() %>";
 			var categoria = "<%= p.getCategoria() %>";
-			var tags = genere + ", " + categoria;
+			var tags = genere + ", " + categoria; // Concatena genere e categoria
 		</script>
 		<script>
 			var disponibilita = '';
@@ -41,6 +42,7 @@
 				else
 					document.getElementById("disponibilita").style.color = 'green';
 			});
+			//TODO aggiugere modulo di IA  per sistema di raccomandazione
 		</script>
 		<main>
 			<section id="prodotto">
