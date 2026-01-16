@@ -425,7 +425,7 @@ function dynamicCheckOrders(url) {
 			if(statoMostrato != stato1)contenutoHtml += "<option>" + stato1 + "</option>";
 			if(statoMostrato != stato2)contenutoHtml += "<option>" + stato2 + "</option>";
 			if(statoMostrato != stato3)contenutoHtml += "<option>" + stato3 + "</option> </select> </td>";
-			contenutoHtml += "<td> <button onclick=\"cambiaStatoOrdine(this)\"> <img src=\"./icons/save.ico\" alt=\"\"> </button> </td> </tr>";
+			contenutoHtml += "<td> <button onclick=\"cambiaStatoOrdine(this)\"> <img src=\"./icons/save.ico\" alt=\"\" width=\"50rem\" height=\"50rem\"> </button> </td> </tr>";
 		}
 
 		$("#container").append(contenutoHtml);
