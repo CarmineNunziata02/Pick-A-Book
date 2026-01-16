@@ -42,7 +42,7 @@
 <main>
     <section id="login">
         <div class="login-img">
-            <img src="./icons/logo.jpg" alt="">
+            <img src="./icons/admin_login.png" alt="">
         </div>
         <div class="form-wrapper">
             <h3>Accedi al tuo Account <br> Da Gestore</h3>
