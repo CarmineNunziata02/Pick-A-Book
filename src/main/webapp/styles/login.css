@@ -33,8 +33,8 @@ main {
 
 .login-img img {
     border-radius: 1.5rem;
-    height: 14rem;
-    width: 14rem;
+    height: 24rem;
+    width: 24rem;
     object-fit: cover;
     border: 4px solid var(--accent-primary);
     padding: 0.6rem;
