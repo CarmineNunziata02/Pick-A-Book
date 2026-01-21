@@ -42,7 +42,7 @@ public class GenereIDSTest {
         Mockito.when(preparedStatement.executeQuery()).thenReturn(resultSet);
 
         Mockito.when(resultSet.next()).thenReturn(true,true,true,true , false);
-        Mockito.when(resultSet.getString("nome")).thenReturn("Azione", "Combattimento", "Commedia", "Crimine");
+        Mockito.when(resultSet.getString("nome")).thenReturn("Azione", "Classici", "Commedia", "Crimine");
 
 
         Collection<String> result = genereIDS.doRetrieveAll();
@@ -88,9 +88,9 @@ public class GenereIDSTest {
 
         Mockito.when(resultSet.next()).thenReturn(false);
 
-        assertFalse(genereIDS.checkGenereName("Avventura"));
+        assertFalse(genereIDS.checkGenereName("Fantascientifico"));
 
-        Mockito.verify(preparedStatement,times(1)).setString(1, "Avventura");
+        Mockito.verify(preparedStatement,times(1)).setString(1, "Fantascientifico");
         Mockito.verify(preparedStatement, times(1)).executeQuery();
         Mockito.verify(resultSet,times(1)).next();
     }

@@ -42,7 +42,7 @@ public class CategoriaIDSTest {
         Mockito.when(preparedStatement.executeQuery()).thenReturn(resultSet);
 
         Mockito.when(resultSet.next()).thenReturn(true,true,true,true , false);
-        Mockito.when(resultSet.getString("nome")).thenReturn("Shonen", "Seinen", "Shojo", "Kodomo");
+        Mockito.when(resultSet.getString("nome")).thenReturn("Biografie", "Classico", "Distopico", "Giallo");
 
 
         Collection<String> result = categoriaIDS.doRetrieveAll();
@@ -68,9 +68,9 @@ public class CategoriaIDSTest {
 
         Mockito.when(resultSet.next()).thenReturn(true);
 
-        assertTrue(categoriaIDS.checkCategoriaName("Manga Italiani"));
+        assertTrue(categoriaIDS.checkCategoriaName("Romanzo Sentimentale"));
 
-        Mockito.verify(preparedStatement,times(1)).setString(1, "Manga Italiani");
+        Mockito.verify(preparedStatement,times(1)).setString(1, "Romanzo Sentimentale");
         Mockito.verify(preparedStatement, times(1)).executeQuery();
         Mockito.verify(resultSet,times(1)).next();
     }
@@ -88,9 +88,9 @@ public class CategoriaIDSTest {
 
         Mockito.when(resultSet.next()).thenReturn(false);
 
-        assertFalse(categoriaIDS.checkCategoriaName("Hentai"));
+        assertFalse(categoriaIDS.checkCategoriaName("Storico"));
 
-        Mockito.verify(preparedStatement,times(1)).setString(1, "Hentai");
+        Mockito.verify(preparedStatement,times(1)).setString(1, "Storico");
         Mockito.verify(preparedStatement, times(1)).executeQuery();
         Mockito.verify(resultSet,times(1)).next();
     }
