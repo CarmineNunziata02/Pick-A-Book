@@ -41,11 +41,11 @@ INSERT INTO categoria (nome) VALUES
 
 -- A Song of Ice and Fire (Game of Thrones)
 INSERT INTO prodotti (isbn, nome, autore, descrizione, immagine_prod, prezzo, quantita, genere_nome, categoria_nome, copie_vendute) VALUES
-('10000000000000001', "A Game of Thrones - Volume 1", "George R.R. Martin", "Il primo volume della saga epica delle Cronache del Ghiaccio e del Fuoco.", './images/got_vol_1.jpg', 14.90, 30, 'Fantasy', 'Fantasy', 0),
-('10000000000000002', 'A Clash of Kings - Volume 2', 'George R.R. Martin', 'La lotta per il trono continua tra intrighi e battaglie.', './images/got_vol_2.jpg', 15.90, 25, 'Fantasy', 'Fantasy', 0),
-('10000000000000003', 'A Storm of Swords - Volume 3', 'George R.R. Martin', 'Tradimenti e alleanze nel terzo capitolo della saga.', './images/got_vol_3.jpg', 16.90, 20, 'Fantasy', 'Fantasy', 0),
-('10000000000000004', 'A Feast for Crows - Volume 4', 'George R.R. Martin', 'La guerra ha lasciato segni, ma la battaglia per il potere è ancora viva.', './images/got_vol_4.jpg', 16.50, 20, 'Fantasy', 'Fantasy', 0),
-('10000000000000005', 'A Dance with Dragons - Volume 5', 'George R.R. Martin', 'Il destino dei regni si intreccia ancora una volta.', './images/got_vol_5.jpg', 17.50, 20, 'Fantasy', 'Fantasy', 0);
+('10000000000000001', "A Game of Thrones - Volume 1", "George R.R. Martin", "Il primo volume della saga epica delle Cronache del Ghiaccio e del Fuoco.", './images/got_vol_1.jpg', 14.90, 30, 'Fantasy', 'Saga', 0),
+('10000000000000002', 'A Clash of Kings - Volume 2', 'George R.R. Martin', 'La lotta per il trono continua tra intrighi e battaglie.', './images/got_vol_2.jpg', 15.90, 25, 'Fantasy', 'Saga', 0),
+('10000000000000003', 'A Storm of Swords - Volume 3', 'George R.R. Martin', 'Tradimenti e alleanze nel terzo capitolo della saga.', './images/got_vol_3.jpg', 16.90, 20, 'Fantasy', 'Saga', 0),
+('10000000000000004', 'A Feast for Crows - Volume 4', 'George R.R. Martin', 'La guerra ha lasciato segni, ma la battaglia per il potere è ancora viva.', './images/got_vol_4.jpg', 16.50, 20, 'Fantasy', 'Saga', 0),
+('10000000000000005', 'A Dance with Dragons - Volume 5', 'George R.R. Martin', 'Il destino dei regni si intreccia ancora una volta.', './images/got_vol_5.jpg', 17.50, 20, 'Fantasy', 'Saga', 0);
 -- Il Signore degli Anelli
 INSERT INTO prodotti (isbn, nome, autore, descrizione, immagine_prod, prezzo, quantita, genere_nome, categoria_nome, copie_vendute) VALUES
 ('10000000000000006', "Il Signore degli Anelli - Volume 1: La Compagnia dell'Anello", "J.R.R. Tolkien", "L'inizio del viaggio per distruggere l'Unico Anello.", './images/ring1.jpg', 13.99, 25, 'Fantasy', 'Fantasy', 0),
@@ -65,9 +65,9 @@ INSERT INTO prodotti (isbn, nome, autore, descrizione, immagine_prod, prezzo, qu
 ('10000000000000016', 'Harry Potter e i Doni della Morte - Volume 7', 'J.K. Rowling', 'La battaglia finale tra Harry e Voldemort ha inizio.', './images/hp7.jpg', 14.99, 40, 'Fantasy', 'Fantasy', 0);
 -- Hunger Games
 INSERT INTO prodotti (isbn, nome, autore, descrizione, immagine_prod, prezzo, quantita, genere_nome, categoria_nome, copie_vendute) VALUES
-('10000000000000017', 'Hunger Games - Volume 1', 'Suzanne Collins', 'Un reality mortale in un futuro distopico.', './images/hunger1.jpg', 9.99, 35, 'Distopico', 'Distopico', 0),
-('10000000000000018', 'La Ragazza di Fuoco - Volume 2', 'Suzanne Collins', 'Katniss sfida il potere del Capitol.', './images/hunger2.jpg', 10.99, 35, 'Distopico', 'Distopico', 0),
-('10000000000000019', 'Il Canto della Rivolta - Volume 3', 'Suzanne Collins', 'La rivolta contro il sistema è giunta al suo apice.', './images/hunger3.jpg', 11.99, 35, 'Distopico', 'Distopico', 0);
+('10000000000000017', 'Hunger Games - Volume 1', 'Suzanne Collins', 'Un reality mortale in un futuro distopico.', './images/hunger1.jpg', 9.99, 35, 'Azione', 'Saga', 0),
+('10000000000000018', 'La Ragazza di Fuoco - Volume 2', 'Suzanne Collins', 'Katniss sfida il potere del Capitol.', './images/hunger2.jpg', 10.99, 35, 'Azione', 'Saga', 0),
+('10000000000000019', 'Il Canto della Rivolta - Volume 3', 'Suzanne Collins', 'La rivolta contro il sistema è giunta al suo apice.', './images/hunger3.jpg', 11.99, 35, 'Azione', 'Saga', 0);
 -- Percy Jackson
 INSERT INTO prodotti (isbn, nome, autore, descrizione, immagine_prod, prezzo, quantita, genere_nome, categoria_nome, copie_vendute) VALUES
 ('10000000000000020', "Percy Jackson e gli Dei dell'Olimpo - Volume 1: Il Ladro di Fulmini", 'Rick Riordan', 'Il figlio di Poseidone scopre la sua vera natura.', './images/percy1.jpg', 8.99, 30, 'Fantasy', 'Fantasy', 0),

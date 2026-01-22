@@ -462,8 +462,8 @@ public class ProdottoIDSTest {
 
         Mockito.when(resultSet.next()).thenReturn(true, true, false);
         Mockito.when(resultSet.getString("isbn")).thenReturn("10000000000000001", "10000000000000006");
-        Mockito.when(resultSet.getString("nome")).thenReturn("One Piece 2", "Dragon Ball Completo");
-        Mockito.when(resultSet.getString("autore")).thenReturn("Eiichiro Oda", "Akira Toriyama");
+        Mockito.when(resultSet.getString("nome")).thenReturn("A Game of Thrones - Volume 1", "Il Signore degli Anelli - Volume 1: La Compagnia dell'Anello");
+        Mockito.when(resultSet.getString("autore")).thenReturn("George R.R. Martin", "J.R.R. Tolkien");
         Mockito.when(resultSet.getString("descrizione")).thenReturn("", "");
         Mockito.when(resultSet.getString("immagine_prod")).thenReturn("./images/got_vol_1.jpg", "./images/ring1.jpg");
         Mockito.when(resultSet.getDouble("prezzo")).thenReturn(14.99, 13.99);
