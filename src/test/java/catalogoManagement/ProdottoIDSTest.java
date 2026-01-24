@@ -236,7 +236,7 @@ public class ProdottoIDSTest {
 
         assertNotNull(prodotto);
 
-        assertEquals("1000000000000001", prodotto.getIsbn());
+        assertEquals("10000000000000001", prodotto.getIsbn());
         assertEquals("A Game of Thrones - Volume 1", prodotto.getNome());
         assertEquals("George R.R. Martin", prodotto.getAutore());
         assertEquals("Il primo volume della saga epica delle Cronache del Ghiaccio e del Fuoco.", prodotto.getDescrizione());
@@ -297,7 +297,7 @@ public class ProdottoIDSTest {
         Mockito.when(resultSet.getString("autore")).thenReturn("J.R.R. Tolkien");
         Mockito.when(resultSet.getString("descrizione")).thenReturn("Il primo volume della saga epica delle Cronache del Ghiaccio e del Fuoco.");
         Mockito.when(resultSet.getString("immagine_prod")).thenReturn("./images/ring1.jpg");
-        Mockito.when(resultSet.getDouble("prezzo")).thenReturn(13.99);
+        Mockito.when(resultSet.getDouble("prezzo")).thenReturn(14.99);
         Mockito.when(resultSet.getInt("quantita")).thenReturn(45);
         Mockito.when(resultSet.getString("genere_nome")).thenReturn("Fantasy");
         Mockito.when(resultSet.getString("categoria_nome")).thenReturn("Saga");
@@ -347,7 +347,7 @@ public class ProdottoIDSTest {
 
         assertNull(prodotto);
 
-        Mockito.verify(preparedStatement, times(1)).setString(1, "game of Thrones 6");
+        Mockito.verify(preparedStatement, times(1)).setString(1, "Game of Thrones 6");
         Mockito.verify(resultSet, times(1)).next();
         Mockito.verify(preparedStatement, times(1)).executeQuery();
     }
