@@ -147,7 +147,7 @@ public class OrdineSingoloIDSTest {
     }
     
     @Test
-    @DisplayName("TCU7_3_1 doRetrieveAllOrdiniSingoliTest")
+    @DisplayName("TCU7_4_1 doRetrieveAllOrdiniSingoliTest")
     public void doRetrieveAllOrdiniSingoliTest() throws Exception {
         
         
