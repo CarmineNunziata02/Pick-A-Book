@@ -359,7 +359,7 @@ public class OrdineIDSTest {
     }
 
     @Test
-    @DisplayName("TCU doRetrieveOrdiniByUserIdTest-Ordine Non Trovatp")
+    @DisplayName("TCU7_2_2 doRetrieveOrdiniByUserIdTest-Ordine Non Trovato")
     public void doRetrieveOrdiniByUserIdTest_NotFound() throws Exception {
         ResultSet resultSet = Mockito.mock(ResultSet.class);
         Mockito.when(preparedStatement.executeQuery()).thenReturn(resultSet);
