@@ -19,6 +19,9 @@
 	</script>
 <jsp:include page="./nav.jsp" flush="true"></jsp:include>
 <main>
+    <button id="torna-indietro" onclick="window.location.assign('areapersonale.jsp')">
+        <div class="bar"></div>
+    </button>
   <h2>I miei ordini</h2>
   <section id="container">
   </section>

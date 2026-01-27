@@ -29,6 +29,9 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css
   document.addEventListener("DOMContentLoaded", dynamicCart("<%=request.getContextPath()%>/CarrelloServlet?isbn=<%=request.getParameter("isbn")%>", "2"));
 </script>
 <main>
+  <button id="torna-indietro" onclick="window.location.assign('areapersonale.jsp')">
+    <div class="bar"></div>
+  </button>
   <section id="container">
     <h2>Carrello</h2>
     <table id="table">

@@ -79,8 +79,8 @@ tbody tr:hover {
     flex-wrap: wrap;
 }
 
-select {
-    flex: 1 1 20rem;
+input, select {
+    flex: 1 1 10rem;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -106,7 +106,6 @@ select:focus {
 button img {
     width: 2.4rem;
     height: 2.4rem;
-    filter: brightness(0) invert(1);
     transition: transform 0.3s ease;
 }
 
@@ -114,46 +113,35 @@ button:hover img {
     transform: scale(1.1);
 }
 
-#torna-indietro {
+#torna-indietro{
     position: relative;
-    display: block;
-    width: 4rem;
-    height: 4rem;
+    display: block ;
+    width: 35px;
     cursor: pointer;
     appearance: none;
     background: none;
     outline: none;
-    border: none;
+    border:none;
     margin: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
-
-.bar, #torna-indietro::after, #torna-indietro::before {
+.bar , #torna-indietro::after , #torna-indietro::before{
     content: '';
     display: block;
     width: 100%;
-    height: 3px;
-    background-color: var(--text-primary);
-    margin: 3px 0;
-    transition: all 0.3s ease;
-    border-radius: 2px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0px
 }
 
-#torna-indietro::before {
-    transform: rotate(-45deg) translate(-4px, 6px);
-    width: 60%;
+
+#torna-indietro::before{
+    transform: rotate(-35deg) translate(-15% ,100%);
+    width: 50%;
 }
 
-#torna-indietro::after {
-    transform: rotate(45deg) translate(-4px, -6px);
-    width: 60%;
-}
-
-#torna-indietro:hover::before,
-#torna-indietro:hover::after {
-    background-color: var(--accent-primary);
+#torna-indietro::after{
+    transform: rotate(35deg) translate(-15% ,-100%);
+    width: 50%;
 }
 
 /* Responsive styles */

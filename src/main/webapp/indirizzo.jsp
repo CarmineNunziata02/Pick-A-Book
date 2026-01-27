@@ -12,61 +12,11 @@
     " rel="stylesheet">
 <jsp:include page="./header.jsp" flush="true"></jsp:include>
 <body>
-<script src="
-https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js
-"></script>
-
-<script>
-    function confermaDatiIndirizzo(event){
-        event.preventDefault();
-
-        var indirizzo = document.getElementById('indirizzo').value;
-        var citta = document.getElementById('citta').value;
-        var provincia = document.getElementById('provincia').value;
-        var cap = document.getElementById('cap').value;
-        var nazione = document.getElementById('nazione').value;
-        console.log(nazione);
-
-        $.ajax({
-            url: '<%=request.getContextPath()%>/AddressServlet',
-            type: 'POST',
-            data:{
-                indirizzo : indirizzo,
-                citta : citta,
-                provincia : provincia,
-                cap : cap,
-                nazione : nazione
-            },
-        }).done(function (response){
-            var status = response.status;
-            if(status == 'Blank'){
-                Swal.fire("ATTENZIONE", "Inserire almeno un valore in un campo che si desidera modificare", "error");
-            }else if(status === 'Invalid_Indirizzo'){
-                Swal.fire("ERRORE DI FORMATO", "Inserire solo il nome della via ed il numero civico", "error");
-            }else if(status === 'Indirizzo_Solo_Numeri') {
-                Swal.fire("ERRORE DI FORMATO", "Inserire il nome della Via", "error");
-            }else if(status === 'Numero_Civico_Mancante'){
-                Swal.fire("ERRORE", "Inserire il numero civico nell'indirizzo", "error");}
-            else if(status === 'Invalid_Citta') {
-                Swal.fire("ERRORE DI FORMATO", "Non sono ammessi caratteri speciali o numeri nella città", "error");
-            }else if(status === 'Invalid_Cap'){
-                Swal.fire("ERRORE DI FORMATO", "Non sono ammessi caratteri speciali o lettere nel CAP", "error");
-            }else if(status === 'Invalid_Provincia'){
-                Swal.fire("ERRORE DI FORMATO", "Non sono ammessi caratteri speciali o lettere nella Provincia", "error");
-            }else if(status === 'Invalid_Nazione') {
-                Swal.fire("ERRORE", "Scegliere una nazione", "error");
-            }else if(status === 'success'){
-                Swal.fire("COMPLIMENTI", "Cambio dati avvenuto con successo", "success");
-                setTimeout(function() {
-                    window.location.assign(response.url);
-                }, 3500); // Ritardo di 3,5 secondi (3500 millisecondi)
-            }
-        })
-
-    }
-</script>
 <jsp:include page="./nav.jsp" flush="true"></jsp:include>
 <main>
+    <button id="torna-indietro" onclick="window.location.assign('areapersonale.jsp')">
+        <div class="bar"></div>
+    </button>
     <section id= "address-info">
         <div class="form-wrapper">
             <h2>I tuoi dati</h2>
@@ -101,5 +51,62 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js
     </section>
 </main>
 <jsp:include page="./footer.jsp" flush="true"></jsp:include>
+
+<script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js
+"></script>
+
+<script>
+    function confermaDatiIndirizzo(event){
+        event.preventDefault();
+
+        var indirizzo = document.getElementById('indirizzo').value;
+        var citta = document.getElementById('citta').value;
+        var provincia = document.getElementById('provincia').value;
+        var cap = document.getElementById('cap').value;
+        var nazione = document.getElementById('nazione').value;
+        console.log(nazione);
+
+        $.ajax({
+            url: '<%=request.getContextPath()%>/AddressServlet',
+            type: 'POST',
+            data:{
+                indirizzo : indirizzo,
+                citta : citta,
+                provincia : provincia,
+                cap : cap,
+                nazione : nazione
+            },
+        }).done(function (response){
+            var status = response.status;
+            console.log(status);
+            if(status === 'Blank'){
+                Swal.fire("ATTENZIONE", "Inserire almeno un valore in un campo che si desidera modificare", "error");
+            }else if(status === 'Invalid_Indirizzo'){
+                Swal.fire("ERRORE DI FORMATO", "Inserire solo il nome della via ed il numero civico", "error");
+            }else if(status === 'Indirizzo_Solo_Numeri') {
+                Swal.fire("ERRORE DI FORMATO", "Inserire il nome della Via", "error");
+            }else if(status === 'Numero_Civico_Mancante'){
+                Swal.fire("ERRORE", "Inserire il numero civico nell'indirizzo", "error");}
+            else if(status === 'Invalid_Citta') {
+                Swal.fire("ERRORE DI FORMATO", "Non sono ammessi caratteri speciali o numeri nella città", "error");
+            }else if(status === 'Invalid_Cap'){
+                Swal.fire("ERRORE DI FORMATO", "Non sono ammessi caratteri speciali o lettere nel CAP", "error");
+            }else if(status === 'Invalid_Provincia'){
+                Swal.fire("ERRORE DI FORMATO", "Non sono ammessi caratteri speciali o lettere nella Provincia", "error");
+            }else if(status === 'Invalid_Nazione') {
+                Swal.fire("ERRORE", "Scegliere una nazione", "error");
+            }else if(status === 'success'){
+                Swal.fire("COMPLIMENTI", "Cambio dati avvenuto con successo", "success");
+                setTimeout(function() {
+                    window.location.assign(response.url);
+                }, 3500); // Ritardo di 3,5 secondi (3500 millisecondi)
+            }else{
+                Swal.fire("boh", "dti cazzi", "error");
+            }
+        })
+
+    }
+</script>
 </body>
 </html>

@@ -11,7 +11,7 @@ body{
 
 .form-wrapper{
     min-width: 60vw;
-    background: var(--background-purple);
+    background: var(--background-elevated);
     border-radius : 4rem;
     display:flex;
     flex-direction:column;
@@ -28,10 +28,11 @@ body{
 }
 
 .form-row label{
-    flex: 1 1 40rem;
     margin : 0rem 1rem;
-	color: var(--div-black);
-	font-weight: bold;
+    color: #fff;
+    font-weight: bold;
+    flex: 0 0 auto;
+    white-space: nowrap;
 }
 
 
@@ -79,35 +80,36 @@ body{
     width: 70%;
     padding : 1rem;
     border-radius: 2rem;
-    background-color: var(--cap-red);
+    background-color: var(--accent-primary);
     cursor: pointer;
     transition: background 0.5s ease-in-out;
     color: #fff;
 }
 
 .form-wrapper button:hover{
-    background:var(--cap-dark-red);
+    background:var(--accent-secondary);
 
 }
 
 .form-row{
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 3rem;
+    justify-content: flex-start;
+    gap: 2rem;
 }
 
 .form-row select{
-    flex: 1 1 10rem;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     padding: 0.5rem 4rem;
     min-width: fit-content;
     border: none;
-    background-color: var(--div-black);
+    background-color: var(--background-primary);
     border-radius: 5px;
     color: #fff;
+    flex: 0 0 20rem;
 }
 
 

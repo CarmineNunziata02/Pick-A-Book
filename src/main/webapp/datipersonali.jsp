@@ -62,6 +62,9 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js
 </script>
 <jsp:include page="./nav.jsp" flush="true"></jsp:include>
 <main>
+  <button id="torna-indietro" onclick="window.location.assign('areapersonale.jsp')">
+    <div class="bar"></div>
+  </button>
   <section id="personal-info">
     <div class="form-wrapper">
       <form onsubmit="confermaDatiPersonali(event)" method="POST">

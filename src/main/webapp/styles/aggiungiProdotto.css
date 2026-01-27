@@ -7,47 +7,35 @@
     background: var(--background-primary);
 }
 
-#torna-indietro {
-    position: absolute;
-    top: 2rem;
-    left: 2rem;
-    width: 4rem;
-    height: 4rem;
+#torna-indietro{
+    position: relative;
+    display: block ;
+    width: 35px;
     cursor: pointer;
     appearance: none;
     background: none;
     outline: none;
-    border: none;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border:none;
+    margin: 2rem;
 }
-
-.bar, #torna-indietro::after, #torna-indietro::before {
+.bar , #torna-indietro::after , #torna-indietro::before{
     content: '';
     display: block;
     width: 100%;
-    height: 3px;
-    background-color: var(--text-primary);
-    margin: 3px 0;
-    transition: all 0.3s ease;
-    border-radius: 2px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0px
 }
 
-#torna-indietro::before {
-    transform: rotate(-45deg) translate(-4px, 6px);
-    width: 60%;
+
+#torna-indietro::before{
+    transform: rotate(-35deg) translate(-15% ,100%);
+    width: 50%;
 }
 
-#torna-indietro::after {
-    transform: rotate(45deg) translate(-4px, -6px);
-    width: 60%;
-}
-
-#torna-indietro:hover::before,
-#torna-indietro:hover::after {
-    background-color: var(--accent-primary);
+#torna-indietro::after{
+    transform: rotate(35deg) translate(-15% ,-100%);
+    width: 50%;
 }
 
 .form-wrapper {

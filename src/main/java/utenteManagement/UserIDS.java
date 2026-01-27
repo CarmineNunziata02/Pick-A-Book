@@ -97,8 +97,9 @@ public class UserIDS implements UserDAO {
 			preparedStatement.setString(9, user.getNazione());
 			preparedStatement.setInt(10, user.getId());
 
-			if(preparedStatement.executeUpdate() > 0)
+			if((preparedStatement.executeUpdate() > 0))
 				return true;
+
 		} catch (SQLException e) {
 			logger.log(Level.ALL, ERROR, e);
 		}

@@ -54,7 +54,7 @@
       cssFile = "modificaProdotto.css";
       AdditionalCss = true;
     }else if (currentPage.equals(("/controllaOrdini.jsp"))) {
-      cssFile = "controllaOrdini.css";
+      cssFile = "controlloOrdini.css";
       AdditionalCss = true;
     }else if (currentPage.equals(("/eliminaProdotto.jsp"))) {
       cssFile = "eliminaProdotto.css";
